@@ -13,8 +13,11 @@ Bash Utilities
     	+ [has][api_configuration_has].
     	+ [remove][api_configuration_remove].
     	+ [show][api_configuration_show].
+    + [GIT (TODO)][api_git].
+    + [NPM (TODO)][api_npm].
+    + [IMAGES (TODO)][api_images].
+    + [HELPERS (TODO)][api_helpers].
 * [License][license].
-
 
 
 Prerequisites
@@ -32,6 +35,7 @@ cd bash
 ```
 
 > Note. If the commands not found in terminal. Please run this code `source ~/.bash_profile`
+
 
 API
 ---
@@ -124,4 +128,8 @@ Base Utilities is available under the MIT license. See the LICENSE file for more
 [api_configuration_has]: #config_has
 [api_configuration_remove]: #config_remove
 [api_configuration_show]: #config_show
+[api_git]: #git
+[api_npm]: #npm
+[api_images]: #images
+[api_helpers]: #helpers
 [license]: #license
