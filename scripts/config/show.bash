@@ -21,7 +21,7 @@ done
 ### Check arguments
 if [ "$help" != false ]
 then
-    utils_help -n config_show -a cshow -d 'Show all config valuesin configuration file'
+    utils_help -n config_show -a cshow -d 'Show all config values in configuration file'
     exit 0
 fi
 
