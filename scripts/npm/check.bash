@@ -36,7 +36,7 @@ fi
 
 ### Source function
 pattern="^.+── $module@.+"
-detailInformation='unavailable'
+detailInformation='Unavailable'
 
 # Default is unavailable
 isAvailable=1
@@ -44,14 +44,14 @@ isAvailable=1
 search="$(npm list -g $module 2> /dev/null)"
 if [[ ${search} =~ ${pattern} ]]
 then
-    detailInformation='available (Global)'
+    detailInformation='Available (Global)'
     isAvailable=0
 fi
 
 search="$(npm list $module 2> /dev/null)"
 if [[ ${search} =~ ${pattern} ]]
 then
-    detailInformation='available (Global)'
+    detailInformation='Available (Local)'
     isAvailable=0
 fi
 

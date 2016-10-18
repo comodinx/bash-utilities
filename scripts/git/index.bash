@@ -5,10 +5,13 @@
 
 alias gti='git'
 
-alias gmas='git_mas'
-alias gdev='git_dev'
+alias git_mas='git_master'
+alias gmas='git_master'
+alias git_dev='git_development'
+alias gdev='git_development'
 alias gbr='git_br'
-alias gbrdev='git_br_dev'
+alias git_br_dev='git_br_development'
+alias gbrdev='git_br_development'
 alias gpus='git_push'
 alias greb='git_rebase'
 alias gmer='git_merge'
@@ -23,11 +26,11 @@ alias gsta='greb -b staging'
 # Functions
 # ---------------------------------------------------------------------------------------
 
-git_mas() {
+git_master() {
     bash ~/bash/scripts/git/rebaseMaster.bash "$@"
 }
 
-git_dev() {
+git_development() {
     bash ~/bash/scripts/git/rebaseDevelopment.bash "$@"
 }
 
@@ -35,7 +38,7 @@ git_br() {
     bash ~/bash/scripts/git/branch.bash "$@"
 }
 
-git_br_dev() {
+git_br_development() {
     bash ~/bash/scripts/git/branchDevelopment.bash "$@"
 }
 

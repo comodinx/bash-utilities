@@ -25,7 +25,7 @@ done
 ### Check arguments
 if [ "$help" != false ]
 then
-    utils_help -n git_br_exists -a gbrexists -d 'Check if branch exists in git repository' -o '-b Your branch to check if exists' -o '-r (?) Only check in remote. Default false' -o '-d (?) Show more details indicate if branch exists in git repository. Default false'
+    utils_help -n git_br_exists -a gbrexists -d 'Check if branch exists in GIT repository' -o '-b Your branch to check if exists' -o '-r (?) Only check in remote. Default false' -o '-d (?) Show more details indicate if branch exists in GIT repository. Default false'
     exit 0
 fi
 

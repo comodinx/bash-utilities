@@ -10,11 +10,7 @@ alias npmc='npm_check'
 # ---------------------------------------------------------------------------------------
 
 npm_update() {
-    logtrace 'Deleting [c:blueb]node_modules[c:green] folder...'
-    rm -rf node_modules
-    logtrace 'Installing modules...'
-    npm i
-    logdebug 'Finish process'
+    bash ~/bash/scripts/npm/update.bash "$@"
 }
 
 npm_check() {

@@ -20,7 +20,7 @@ done
 ### Check arguments
 if [ "$help" != false ]
 then
-    utils_help -n git_br_dev -a gbrdev -d 'Get your development branch setting in config with key "git.development.branch"'
+    utils_help -n git_br_development -a git_br_dev -a gbrdev -d 'Get your development branch setting in config with key "git.development.branch"'
     exit 1
 fi
 

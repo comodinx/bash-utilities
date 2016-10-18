@@ -24,7 +24,7 @@ done
 ### Check arguments
 if [ "$help" != false ]
 then
-    utils_help -n git_merge -a gmer -d 'Merge your branch with other branch' -o '-o (?) Your branch to use for merge into your selected branch. Default is the result of [c:blueb]git_br_dev[c:0] command' -o '-b (?) Your branch to update. Default your current branch'
+    utils_help -n git_merge -a gmer -d 'Merge your branch with other branch' -o '-o (?) Your branch to use for merge into your selected branch. Default is the result of [c:blueb]git_br_development[c:0] command' -o '-b (?) Your branch to update. Default your current branch'
     exit 1
 fi
 
@@ -36,7 +36,7 @@ fi
 
 if [ -z "$origin" ]
 then
-    origin=$(git_br_dev)
+    origin=$(git_br_development)
     if [ -z "$origin" ]
     then
         logwarn 'Please enter a valid origin branch'

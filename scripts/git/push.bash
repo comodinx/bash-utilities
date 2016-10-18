@@ -54,7 +54,7 @@ fi
 
 if [ "$force" == false ]
 then
-    base=$(git_br_dev)
+    base=$(git_br_development)
     if [ "$branch" == "master" ] || [ "$branch" == "$base" ]
     then
         logwarn "No use gpus with [c:blueb]master[c:yellow] or [c:blueb]$base"
