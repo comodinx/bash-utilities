@@ -1,8 +1,8 @@
 Bash Utilities
 ==============
 
-Índice
-------
+Index
+-----
 
 * [Prerequisites][prerequisites].
 * [Installation][Installation].
