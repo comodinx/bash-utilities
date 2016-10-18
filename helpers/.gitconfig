@@ -1,0 +1,15 @@
+[alias]
+	co = checkout
+	ci = commit
+	st = status
+	br = branch
+    ll = log --decorate=short --graph --oneline
+[color]
+	ui = true
+[user]
+	name = Nicolas Molina
+	email = nmolina@umewin.com
+[push]
+	default = simple
+[core]
+	mergeoptions = --no-edit --ff
