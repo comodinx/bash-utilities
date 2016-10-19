@@ -22,13 +22,13 @@ done
 if [ "$help" != false ]
 then
     utils_help -n read_confirm -a readc -d 'Read input for confirmation any action' -o '-m Confirmation message'
-    exit 1
+    exit 0
 fi
 
 if [ -z "$message" ]
 then
     logwarn 'Please enter a confirmation message'
-    exit 0
+    exit 1
 fi
 
 

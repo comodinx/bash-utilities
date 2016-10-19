@@ -22,7 +22,7 @@ done
 if [ "$help" != false ]
 then
     utils_help -n git_dev -a gdev -d 'Change your current branch with result of [c:blueb]git_br_development[c:0] command, fetch and rebase from origin this branch' -N "This command is shortcut for [c:blueb]git_rebase -b $branch"
-    exit 1
+    exit 0
 fi
 
 

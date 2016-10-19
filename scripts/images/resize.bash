@@ -27,26 +27,26 @@ done
 if [ "$help" != false ]
 then
     utils_help -n image_resize -a imgres -d 'Resize image to 1x, 2x and 3x' -o '-f Your file image to resize (.png or .jpg)'
-    exit 1
+    exit 0
 fi
 
 if [ -z "$filename" ]
 then
     logwarn 'Please enter a file image path'
-    exit 0
+    exit 1
 fi
 
 if [ ! -f "$filename" ]
 then
     logwarn 'File not found!'
-	exit 0
+	exit 1
 fi
 
 extension=${filename: -4}
 if [ "$extension" != '.png' ] && [ "$extension" != '.jpg' ]
 then
 	logwarn 'File must be a .png or .jpg'
-	exit 0
+	exit 1
 fi
 
 if [ ! -d "$directory" ]

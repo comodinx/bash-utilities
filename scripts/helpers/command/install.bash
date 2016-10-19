@@ -45,5 +45,3 @@ then
 else
     apt-get install $1
 fi
-
-exit 0

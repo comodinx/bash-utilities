@@ -22,7 +22,7 @@ done
 if [ "$help" != false ]
 then
     utils_help -n git_br -a gbr -d 'Get your current branch'
-    exit 1
+    exit 0
 fi
 
 

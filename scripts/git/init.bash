@@ -28,7 +28,7 @@ done
 if [ "$help" != false ]
 then
     utils_help -n git_init -a ginit -d 'Initialize a GIT repository' -o '-o GIT origin. Example "https://github.com/comodinx/bash-utilities.git"' -o '-c (?) Comment for GIT commit. Default "Initial commit"' -o '-b (?) Your branch to push. Default master'
-    exit 1
+    exit 0
 fi
 
 if [ -z "$origin" ]

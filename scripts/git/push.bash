@@ -27,19 +27,19 @@ done
 if [ "$help" != false ]
 then
     utils_help -n git_push -a gpus -d 'Add all files, Commit with comment and Push to origin' -o '-c Comment for GIT commit' -o '-b (?) Your branch to push. Default your current branch' -o '-f (?) Force to use master branch o your develop branch' 
-    exit 1
+    exit 0
 fi
 
 if ! git_check
 then
     logwarn "Directory is not a GIT repository"
-    exit 0
+    exit 1
 fi
 
 if [ -z "$comment" ]
 then
     logwarn 'Please enter a comment'
-    exit 0
+    exit 1
 fi
 
 if [ -z "$branch" ]
@@ -48,7 +48,7 @@ then
     if [ -z "$branch" ]
     then
         logwarn 'Please select any branch'
-        exit 0
+        exit 1
     fi
 fi
 
@@ -58,7 +58,7 @@ then
     if [ "$branch" == "master" ] || [ "$branch" == "$base" ]
     then
         logwarn "No use gpus with [c:blueb]master[c:yellow] or [c:blueb]$base"
-        exit 0
+        exit 1
     fi
 fi
 

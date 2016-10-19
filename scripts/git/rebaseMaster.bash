@@ -23,7 +23,7 @@ done
 if [ "$help" != false ]
 then
     utils_help -n git_mas -a gmas -d 'Change your current branch to master, fetch and rebase from origin this branch' -N 'This command is shortcut for [c:blueb]git_rebase -b master'
-    exit 1
+    exit 0
 fi
 
 

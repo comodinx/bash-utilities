@@ -23,13 +23,13 @@ done
 if [ "$help" != false ]
 then
     utils_help -n git_rebase -a greb -d 'Rebase from origin your branch' -o '-b (?) Your branch to rebase. Default your current branch'
-    exit 1
+    exit 0
 fi
 
 if ! git_check
 then
     logwarn "Directory is not a GIT repository"
-    exit 0
+    exit 1
 fi
 
 if [ -z "$branch" ]
@@ -38,7 +38,7 @@ then
     if [ -z "$branch" ]
     then
         logwarn 'Please select any branch'
-        exit 0
+        exit 1
     fi
 fi
 

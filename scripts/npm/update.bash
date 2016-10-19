@@ -22,7 +22,7 @@ done
 if [ "$help" != false ]
 then
     utils_help -n npm_update -a npmu -d 'Update node modules' -o '-o (?) Remove current node_modules folder. Default true'
-    exit 1
+    exit 0
 fi
 
 

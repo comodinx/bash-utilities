@@ -24,13 +24,13 @@ done
 if [ "$help" != false ]
 then
     utils_help -n npm_check -a npmc -d 'Check if NPM module exists' -o '-m Module name' -o '-d (?) Details indicate if module is local or global. Default false'
-    exit 1
+    exit 0
 fi
 
 if [ -z "$module" ]
 then
     logwarn 'Please enter a module name'
-    exit 0
+    exit 1
 fi
 
 

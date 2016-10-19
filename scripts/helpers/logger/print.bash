@@ -22,7 +22,7 @@ done
 if [ "$help" != false ]
 then
     utils_help -n logprint -a lprint -d 'Print log message' -o '-m Log message'
-    exit 1
+    exit 0
 fi
 
 

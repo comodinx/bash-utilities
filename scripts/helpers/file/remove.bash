@@ -24,13 +24,13 @@ done
 if [ "$help" != false ]
 then
     utils_help -n file_remove -a filer -d 'Remove all files match with file pattern in path' -o '-f File pattern' -o '-p (?) Folder path. Default is "."'
-    exit 1
+    exit 0
 fi
 
 if [ -z "$pattern" ]
 then
     logwarn 'Please enter a file pattern'
-    exit 0
+    exit 1
 fi
 
 

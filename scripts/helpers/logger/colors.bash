@@ -20,7 +20,7 @@ done
 if [ "$help" != false ]
 then
     utils_help -n logcolors -a lcolors -d 'Print log color information'
-    exit 1
+    exit 0
 fi
 
 

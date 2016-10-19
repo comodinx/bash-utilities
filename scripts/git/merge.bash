@@ -25,13 +25,13 @@ done
 if [ "$help" != false ]
 then
     utils_help -n git_merge -a gmer -d 'Merge your branch with other branch' -o '-o (?) Your branch to use for merge into your selected branch. Default is the result of [c:blueb]git_br_development[c:0] command' -o '-b (?) Your branch to update. Default your current branch'
-    exit 1
+    exit 0
 fi
 
 if ! git_check
 then
     logwarn "Directory is not a GIT repository"
-    exit 0
+    exit 1
 fi
 
 if [ -z "$origin" ]
@@ -40,7 +40,7 @@ then
     if [ -z "$origin" ]
     then
         logwarn 'Please enter a valid origin branch'
-        exit 0
+        exit 1
     fi
 fi
 
@@ -50,14 +50,14 @@ then
     if [ -z "$branch" ]
     then
         logwarn 'Please select any branch'
-        exit 0
+        exit 1
     fi
 fi
 
 if [ "$origin" == "$branch" ]
 then
     logwarn "Your branch [c:blue]$branch[c:yellow] is not merged with itself"
-    exit 0
+    exit 1
 fi
 
 ### Source function

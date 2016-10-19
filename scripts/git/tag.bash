@@ -25,19 +25,19 @@ done
 if [ "$help" != false ]
 then
     utils_help -n git_tag -a gtag -d 'Tagging code version' -o '-t Tag version' -o '-c (?) Comment for the tag. Default the tag specified'
-    exit 1
+    exit 0
 fi
 
 if ! git_check
 then
     logwarn "Directory is not a GIT repository"
-    exit 0
+    exit 1
 fi
 
 if [ -z "$tag" ]
 then
     logwarn 'Please enter a tag'
-    exit 0
+    exit 1
 fi
 
 if [ -z "$comment" ]
