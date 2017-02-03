@@ -14,6 +14,7 @@ alias git_br_dev='git_br_development'
 alias gbrdev='git_br_development'
 alias gpus='git_push'
 alias greb='git_rebase'
+alias gres='git_reset'
 alias gmer='git_merge'
 alias gtag='git_tag'
 alias ginit='git_init'
@@ -48,6 +49,10 @@ git_push() {
 
 git_rebase() {
     bash ~/bash/scripts/git/rebase.bash "$@"
+}
+
+git_reset() {
+    bash ~/bash/scripts/git/reset.bash "$@"
 }
 
 git_merge() {

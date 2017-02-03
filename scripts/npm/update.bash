@@ -29,7 +29,7 @@ fi
 ### Source function
 if [ "$onlyupdate" != false ]
 then
-    logtrace 'Delete [c:blueb]node_modules[c:green] folder'
+    logtrace 'Delete [c:blueb]node_modules[c:0] folder'
     rm -rf node_modules
 fi
 

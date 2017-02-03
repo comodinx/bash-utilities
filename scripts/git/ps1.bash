@@ -11,11 +11,12 @@ function __git_status_flag {
   local git_status="$(git status 2> /dev/null)"
   local remote_pattern="^# Your branch is (.*) of"
   local diverge_pattern="# Your branch and (.*) have diverged"
+  local clean_pattern="working tree|directory clean"
   local state=""
   local spacer=""
   local remote=""
 
-  if [[ ! ${git_status}} =~ "working directory clean" ]]; then
+  if [[ ! ${git_status}} =~ ${clean_pattern} ]]; then
     state="⚡"
     spacer=" "
   fi

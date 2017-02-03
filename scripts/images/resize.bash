@@ -26,7 +26,7 @@ done
 ### Check arguments
 if [ "$help" != false ]
 then
-    utils_help -n image_resize -a imgres -d 'Resize image to 1x, 2x and 3x' -o '-f Your file image to resize (.png or .jpg)'
+    utils_help -n image_resize -a imgres -d 'Resize image to 1x, 2x and 3x' -o '-f Your file image to resize (.png or .jpg)' -o '-c (?) Compress images. Default false'
     exit 0
 fi
 
