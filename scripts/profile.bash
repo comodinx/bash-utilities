@@ -23,3 +23,4 @@ source ~/bash/scripts/config/index.bash
 source ~/bash/scripts/images/index.bash
 source ~/bash/scripts/npm/index.bash
 source ~/bash/scripts/git/index.bash
+source ~/bash/scripts/android/index.bash

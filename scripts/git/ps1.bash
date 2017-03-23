@@ -16,7 +16,7 @@ function __git_status_flag {
   local spacer=""
   local remote=""
 
-  if [[ ! ${git_status}} =~ ${clean_pattern} ]]; then
+  if [[ ! ${git_status} =~ ${clean_pattern} ]]; then
     state="⚡"
     spacer=" "
   fi

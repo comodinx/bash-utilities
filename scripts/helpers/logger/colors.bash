@@ -25,7 +25,7 @@ fi
 
 
 ### Source function
-echo -e 'Reset (Usage: [c:0])'
+echo -e '༼ つ ◕_◕ ༽つ Reset (Usage: [c:0])'
 logtrace '[c:yellow]--------------------'
 logtrace '\033[0mReset (033[0m)'
 

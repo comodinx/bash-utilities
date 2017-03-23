@@ -6,15 +6,17 @@ source ~/bash/scripts/helpers/index.bash
 
 ### Local variables
 help=false
+remove=false
 directory=''
 filename=''
 
 
 ### Parse arguments
-while getopts ":f:d:h" opt; do
+while getopts ":f:d:rh" opt; do
     case "${opt}" in
         f)  filename=$OPTARG;;
         d)  directory=$OPTARG;;
+        r)  remove=true;;
         h)  help=true;;
     esac
 done
@@ -23,7 +25,7 @@ done
 ### Check arguments
 if [ "$help" != false ]
 then
-    utils_help -n image_compress -a imgcom -d 'Compress image size. Require run command in image folder' -o '-f Your file image to compress (.png or .jpg)'
+    utils_help -n image_compress -a imgcom -d 'Compress image size. Require run command in image folder' -o '-f Your file image to compress (.png or .jpg)' -o '-r Remove original file image. Default false'
     exit 0
 fi
 
@@ -48,21 +50,17 @@ fi
 
 if [ ! -d "$directory" ]
 then
-    directory="$(basename "$filename").out"
+    directory="$(basename "$filename")"
+    directory="${directory%.*}"
 fi
 
 ### Source function
-logdebug "Compressing..."
+mkdir -p "$directory"
 
 fbname=$(basename "$filename" $extension)
 file_original="$fbname-raw$extension"
 file_compressed="$fbname-raw-fs8$extension"
 file_final="$fbname$extension"
-
-if [ ! -d "$directory" ]
-then
-    mkdir  "$directory"
-fi
 
 cp "$filename" "$directory/$file_original"
 
@@ -75,6 +73,11 @@ then
 
     mv "$directory/$file_compressed" "$directory/$file_final"
 
+    if [ $remove != false ]
+    then
+        find "$directory" -name "$file_original" -type f -delete
+    fi
+
     logdebug "$file_final created ($filesize_original KB to $filesize_compressed KB)"
 fi
 
@@ -86,5 +89,9 @@ then
 
     mv "$directory/$file_original" "$directory/$file_final"
 
+    if [ $remove != false ]
+    then
+        find "$directory" -name "$file_original" -type f -delete
+    fi
     logdebug "$file_original renamed to $file_final ($filesize_original KB)"
 fi

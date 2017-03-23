@@ -1,0 +1,93 @@
+<resources>
+
+    <!-- RESPONSIVE : POSITIVE -->
+
+    <dimen name="m0.125">1dp</dimen>
+    <dimen name="m0.25">2dp</dimen>
+    <dimen name="m0.5">4dp</dimen>
+    <dimen name="m0.75">6dp</dimen>
+    <dimen name="m1">8dp</dimen>
+    <dimen name="m1.25">10dp</dimen>
+    <dimen name="m1.5">12dp</dimen>
+    <dimen name="m2">16dp</dimen>
+    <dimen name="m2.5">20dp</dimen>
+    <dimen name="m3">24dp</dimen>
+    <dimen name="m3.5">28dp</dimen>
+    <dimen name="m4">32dp</dimen>
+    <dimen name="m4.125">33dp</dimen>
+    <dimen name="m5">40dp</dimen>
+    <dimen name="m5.5">44dp</dimen>
+    <dimen name="m6">48dp</dimen>
+    <dimen name="m6.5">52dp</dimen>
+    <dimen name="m7">56dp</dimen>
+    <dimen name="m7.5">60dp</dimen>
+    <dimen name="m8">64dp</dimen>
+    <dimen name="m9">72dp</dimen>
+    <dimen name="m10">80dp</dimen>
+    <dimen name="m11">88dp</dimen>
+    <dimen name="m12">96dp</dimen>
+    <dimen name="m13">104dp</dimen>
+    <dimen name="m14">112dp</dimen>
+    <dimen name="m14.5">116dp</dimen>
+    <dimen name="m14.625">117dp</dimen>
+    <dimen name="m15">120dp</dimen>
+    <dimen name="m15.5">124dp</dimen>
+    <dimen name="m18">144dp</dimen>
+    <dimen name="m19.5">156dp</dimen>
+    <dimen name="m20">160dp</dimen>
+    <dimen name="m24">192dp</dimen>
+    <dimen name="m26">208dp</dimen>
+    <dimen name="m28">224dp</dimen>
+    <dimen name="m30">240dp</dimen>
+    <dimen name="m32">256dp</dimen>
+    <dimen name="m36">288dp</dimen>
+    <dimen name="m40">320dp</dimen>
+    <dimen name="m42">336dp</dimen>
+    <dimen name="m46">368dp</dimen>
+
+    <!-- RESPONSIVE : NEGATIVE -->
+
+    <dimen name="m0.125n">-1dp</dimen>
+    <dimen name="m0.25n">-2dp</dimen>
+    <dimen name="m0.5n">-4dp</dimen>
+    <dimen name="m0.75n">-6dp</dimen>
+    <dimen name="m1n">-8dp</dimen>
+    <dimen name="m1.25n">-10dp</dimen>
+    <dimen name="m1.5n">-12dp</dimen>
+    <dimen name="m2n">-16dp</dimen>
+    <dimen name="m2.5n">-20dp</dimen>
+    <dimen name="m3n">-24dp</dimen>
+    <dimen name="m3.5n">-28dp</dimen>
+    <dimen name="m4n">-32dp</dimen>
+    <dimen name="m4.125n">-33dp</dimen>
+    <dimen name="m5n">-40dp</dimen>
+    <dimen name="m5.5n">-44dp</dimen>
+    <dimen name="m6n">-48dp</dimen>
+    <dimen name="m6.5n">-52dp</dimen>
+    <dimen name="m7n">-56dp</dimen>
+    <dimen name="m7.5n">-60dp</dimen>
+    <dimen name="m8n">-64dp</dimen>
+    <dimen name="m9n">-72dp</dimen>
+    <dimen name="m10n">-80dp</dimen>
+    <dimen name="m11n">-88dp</dimen>
+    <dimen name="m12n">-96dp</dimen>
+    <dimen name="m13n">-104dp</dimen>
+    <dimen name="m14n">-112dp</dimen>
+    <dimen name="m14.5n">-116dp</dimen>
+    <dimen name="m14.625n">-117dp</dimen>
+    <dimen name="m15n">-120dp</dimen>
+    <dimen name="m15.5n">-124dp</dimen>
+    <dimen name="m18n">-144dp</dimen>
+    <dimen name="m19.5n">-156dp</dimen>
+    <dimen name="m20n">-160dp</dimen>
+    <dimen name="m24n">-192dp</dimen>
+    <dimen name="m26n">-208dp</dimen>
+    <dimen name="m28n">-224dp</dimen>
+    <dimen name="m30n">-240dp</dimen>
+    <dimen name="m32n">-256dp</dimen>
+    <dimen name="m36n">-288dp</dimen>
+    <dimen name="m40n">-320dp</dimen>
+    <dimen name="m42n">-336dp</dimen>
+    <dimen name="m46n">-368dp</dimen>
+
+</resources>
