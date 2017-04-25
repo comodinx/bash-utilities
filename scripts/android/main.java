@@ -4,12 +4,12 @@ import java.io.*;
 class Main
 {
 
-    private static final double LDPI_FACTOR = 0.375;
-    private static final double MDPI_FACTOR = 0.5;
-    private static final double HDPI_FACTOR = 0.75;
-    private static final double XHDPI_FACTOR = 1.0;
-    private static final double XXHDPI_FACTOR = 1.5;
-    private static final double XXXHDPI_FACTOR = 2.0;
+    private static final double LDPI_FACTOR = 0.75;
+    private static final double MDPI_FACTOR = 1;
+    private static final double HDPI_FACTOR = 1.5;
+    private static final double XHDPI_FACTOR = 2.0;
+    private static final double XXHDPI_FACTOR = 3.0;
+    private static final double XXXHDPI_FACTOR = 4.0;
 
     private static final String BASE_PATH = "/src/main/res/values";
     private static final String DIMENS_PATH = BASE_PATH + "/dimens.xml";

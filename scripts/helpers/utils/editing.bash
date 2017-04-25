@@ -12,5 +12,6 @@ edit_bash_profile() {
 }
 
 restore_bash_profile() {
+    javac ~/bash/scripts/android/main.java
     source ~/.bash_profile
 }
