@@ -3,6 +3,7 @@
 # Includes
 # ---------------------------------------------------------------------------------------
 
+source ~/bash/scripts/helpers/utils/json.bash
 source ~/bash/scripts/helpers/utils/network.bash
 source ~/bash/scripts/helpers/utils/editing.bash
 

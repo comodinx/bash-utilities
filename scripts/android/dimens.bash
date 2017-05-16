@@ -14,6 +14,7 @@ dimens_line_suffix='dp<\/dimen>$'
 
 ### Local variables
 help=false
+currentPath=''
 filename=''
 dimension=''
 rawline=''

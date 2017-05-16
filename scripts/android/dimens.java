@@ -1,7 +1,7 @@
 import java.util.*;
 import java.io.*;
 
-class Main
+class Dimens
 {
 
     private static final double LDPI_FACTOR = 0.75;

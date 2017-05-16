@@ -9,6 +9,7 @@ alias filerepl='file_replace_line'
 alias filehl='file_has_line'
 alias filerl='file_remove_line'
 alias filer='file_remove'
+alias filet='file_transform'
 
 
 # Functions
@@ -38,4 +39,8 @@ file_remove_line() {
 
 file_remove() {
     bash ~/bash/scripts/helpers/file/remove.bash "$@"
+}
+
+file_transform() {
+    bash ~/bash/scripts/helpers/file/transform.bash "$@"
 }
