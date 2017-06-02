@@ -1,6 +1,3 @@
-# Elevate the max watched files
-ulimit -n 10000
-
 
 # Display ps1 with colorful pwd and git status
 # Acording to Jimmyxu .bashrc

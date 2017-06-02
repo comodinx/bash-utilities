@@ -43,19 +43,19 @@ fi
 
 if ! [ -n "$filename" ]
 then
-    logwarn "Please enter a file"
+    logwarn 'Please enter a file'
     exit 1
 fi
 
 if ! [ -f "$filename" ]
 then
-    logwarn "Please enter a valid file"
+    logwarn 'Please enter a valid file'
     exit 1
 fi
 
 if ! [ -n "$outputformat" ]
 then
-    logwarn "Please enter a output file format"
+    logwarn 'Please enter a output file format'
     exit 1
 fi
 

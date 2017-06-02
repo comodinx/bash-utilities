@@ -20,6 +20,7 @@ help=false
 
 # Source utilities
 source "${SCRIPTS}/helpers/index.bash"
+source "${SCRIPTS}/config/index.bash"
 
 
 ### Parse arguments
@@ -40,6 +41,11 @@ fi
 
 ### Source function
 line="source ~/bash/scripts/profile.bash"
+
+if ! [ -f "~/.bash_profile" ]
+then
+    echo "" >> ~/.bash_profile
+fi
 
 if file_has_line -p "$line" -f ~/.bash_profile
 then

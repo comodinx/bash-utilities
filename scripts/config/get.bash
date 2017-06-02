@@ -33,6 +33,12 @@ then
     exit 1
 fi
 
+if ! [ -f "~/bash/config/default.properties" ]
+then
+    echo "$default"
+    exit 0
+fi
+
 
 ### Source function
 line=$(file_get_line -p "$key=*" -f ~/bash/config/default.properties)

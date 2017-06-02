@@ -25,6 +25,11 @@ then
     exit 0
 fi
 
+if ! [ -f "~/bash/config/default.properties" ]
+then
+    exit 0
+fi
+
 
 ### Source function
 cat ~/bash/config/default.properties | grep =

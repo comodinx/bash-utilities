@@ -41,7 +41,7 @@ fi
 
 if ! [ -f "$filename" ]
 then
-    logwarn "Please enter a valid file"
+    logwarn 'Please enter a valid file'
     exit 1
 fi
 
