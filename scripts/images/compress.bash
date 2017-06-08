@@ -25,7 +25,7 @@ done
 ### Check arguments
 if [ "$help" != false ]
 then
-    utils_help -n image_compress -a imgcom -d 'Compress image size. Require run command in image folder' -o '-f Your file image to compress (.png or .jpg)' -o '-r Remove original file image. Default false'
+    utils_help -n image_compress -a imgcom -d 'Compress image size. Require run command in image folder' -o '-f Your file image to compress (.png or .jpg)' -o '-d Your directory for output files. Default image name without extension' -o '-r Remove original file image. Default false'
     exit 0
 fi
 
@@ -48,11 +48,12 @@ then
 	exit 1
 fi
 
-if [ ! -d "$directory" ]
+if [ -z "$directory" ]
 then
     directory="$(basename "$filename")"
     directory="${directory%.*}"
 fi
+
 
 ### Source function
 mkdir -p "$directory"

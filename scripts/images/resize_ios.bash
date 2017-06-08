@@ -17,7 +17,7 @@ while getopts ":f:d:ch" opt; do
     case "${opt}" in
         f)  filename=$OPTARG;;
         d)  directory=$OPTARG;;
-        c)  compress=$OPTARG;;
+        c)  compress=true;;
         h)  help=true;;
     esac
 done
@@ -26,7 +26,7 @@ done
 ### Check arguments
 if [ "$help" != false ]
 then
-    utils_help -n image_resize_ios -a imgresios -d 'Resize image for IOS to 1x, 2x and 3x' -o '-f Your file image to resize (.png or .jpg)' -o '-c (?) Compress images. Default false'
+    utils_help -n image_resize_ios -a imgresios -d 'Resize image for IOS to 1x, 2x and 3x' -o '-f Your file image to resize (.png or .jpg)' -o '-d Your directory for output files. Default image name without extension' -o '-c (?) Compress images. Default false'
     exit 0
 fi
 
@@ -49,7 +49,7 @@ then
     exit 1
 fi
 
-if [ ! -d "$directory" ]
+if [ -z "$directory" ]
 then
     directory="$(basename "$filename")"
     directory="${directory%.*}/ios"

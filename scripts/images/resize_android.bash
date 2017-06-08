@@ -19,7 +19,7 @@ while getopts ":f:s:d:ch" opt; do
         f)  filename=$OPTARG;;
         s)  filesize=$OPTARG;;
         d)  directory=$OPTARG;;
-        c)  compress=$OPTARG;;
+        c)  compress=true;;
         h)  help=true;;
     esac
 done
@@ -28,7 +28,7 @@ done
 ### Check arguments
 if [ "$help" != false ]
 then
-    utils_help -n image_resize_android -a imgresand -d 'Resize image for Android to ldpi, mdpi, hdpi, xhdpi, xxhdpi and xxxhdpi' -o '-f Your file image to resize (.png or .jpg)' -o '-s (?) Current image size (ldpi, mdpi, hdpi, xhdpi, xxhdpi or xxxhdpi). Default "xxxhdpi"' -o '-c (?) Compress images. Default false'
+    utils_help -n image_resize_android -a imgresand -d 'Resize image for Android to ldpi, mdpi, hdpi, xhdpi, xxhdpi and xxxhdpi' -o '-f Your file image to resize (.png or .jpg)' -o '-d Your directory for output files. Default image name without extension' -o '-s (?) Current image size (ldpi, mdpi, hdpi, xhdpi, xxhdpi or xxxhdpi). Default "xxxhdpi"' -o '-c (?) Compress images. Default false'
     exit 0
 fi
 
@@ -56,7 +56,7 @@ then
     exit 1
 fi
 
-if [ ! -d "$directory" ]
+if [ -z "$directory" ]
 then
     directory="$(basename "$filename")"
     directory="${directory%.*}/android"
@@ -146,7 +146,7 @@ resize() {
     sips --resampleHeight "$h" "$filename" --out "$directory/drawable-$density/$filename" &> /dev/null
     logdebug "drawable-$density/$filename created ($w x $h)"
 
-    if [ "$compress" != "false" ]
+    if [ "$compress" != false ]
     then
         image_compress -f "$directory/drawable-$density/$filename" -d "$directory/drawable-$density" -r
     fi
