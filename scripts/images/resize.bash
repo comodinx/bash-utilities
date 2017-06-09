@@ -22,14 +22,16 @@ directory=''
 files=''
 filesize=''
 resizetype=''
+pattern=''
 
 
 ### Parse arguments
-while getopts ":f:s:d:r:ch" opt; do
+while getopts ":f:s:d:p:r:ch" opt; do
     case "${opt}" in
         f)  files+="$OPTARG[SEPARATOR]";;
         s)  filesize=$OPTARG;;
         d)  directory=$OPTARG;;
+        p)  pattern=$OPTARG;;
         c)  compress=$OPTARG;;
         r)  resizetype=$OPTARG;;
         h)  help=true;;
@@ -40,14 +42,17 @@ done
 ### Check arguments
 if [ "$help" != false ]
 then
-    utils_help -n image_resize -a imgres -d 'Resize image for Android and IOS' -o '-f Your files images to resize (.png or .jpg)' -o '-d Your directory for output files. Default image name without extension' -o '-s (?) Current image size (ldpi, mdpi, hdpi, xhdpi, xxhdpi or xxxhdpi). Default "xxxhdpi"' -o '-r (?) Resize platform ("i" for IOS, "a" for Android or "*" for all). Default "*" (IOS and Android)' -o '-c (?) Compress images. Default false'
+    utils_help -n image_resize -a imgres -d 'Resize image for Android and IOS' -o '-f Your files images to resize (.png or .jpg)' -o '-p (?) Your files images to resize (.png or .jpg)' -o '-d (?) Your directory for output files. Default image name without extension' -o '-s (?) Current image size (ldpi, mdpi, hdpi, xhdpi, xxhdpi or xxxhdpi). Default "xxxhdpi"' -o '-r (?) Resize platform ("i" for IOS, "a" for Android or "*" for all). Default "*" (IOS and Android)' -o '-c (?) Compress images. Default false' -N "Use double quote \"\" for pattern option (-p)."
     exit 0
 fi
 
 if [ -z "$files" ]
 then
-    logwarn 'Please enter one or more file image path'
-    exit 1
+    if [ -z "$pattern" ]
+    then
+        logwarn 'Please enter one or more file image path'
+        exit 1
+    fi
 fi
 
 if [ -z "$filesize" ]
@@ -73,6 +78,14 @@ prepare() {
     then
         mkdir -p "$directory"
     fi
+
+    if [ -z "$files" ]
+    then
+        for filename in "$pattern"
+        do
+            files+="$filename[SEPARATOR]"
+        done
+    fi
 }
 
 resize() {
@@ -96,13 +109,13 @@ resize() {
 
     if [ "$resizetype" == '*' ] || [ "$resizetype" == 'i' ]
     then
-        logdebug "Resizing IOS..."
+        loginfo "Resizing IOS..."
         image_resize_ios -f "$filename" -d "$directory/ios" $args
     fi
 
     if [ "$resizetype" == '*' ] || [ "$resizetype" == 'a' ]
     then
-        logdebug "\nResizing Android..."
+        loginfo "Resizing Android..."
         image_resize_android -f "$filename" -s "$filesize" -d "$directory/android" $args
     fi
 }

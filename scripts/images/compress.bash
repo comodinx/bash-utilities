@@ -25,7 +25,7 @@ done
 ### Check arguments
 if [ "$help" != false ]
 then
-    utils_help -n image_compress -a imgcom -d 'Compress image size. Require run command in image folder' -o '-f Your file image to compress (.png or .jpg)' -o '-d Your directory for output files. Default image name without extension' -o '-r Remove original file image. Default false'
+    utils_help -n image_compress -a imgcom -d 'Compress image size. Require run command in image folder' -o '-f Your file image to compress (.png or .jpg)' -o '-d (?) Your directory for output files. Default image name without extension' -o '-r Remove original file image. Default false'
     exit 0
 fi
 
@@ -84,7 +84,7 @@ fi
 
 if [ $extension == ".jpg" ]
 then
-    logdebug "I don't know how to compress JPG files, sorry!"
+    logwarn "I don't know how to compress JPG files, sorry!"
 
     filesize_original=$(du -k "$directory/$file_original" | cut -f1)
 

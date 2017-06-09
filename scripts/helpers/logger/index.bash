@@ -30,7 +30,7 @@ logtrace() {
 }
 
 logdebug() {
-    logprint -m "[c:green]$1"
+    logprint -m "$1"
 }
 
 loginfo() {

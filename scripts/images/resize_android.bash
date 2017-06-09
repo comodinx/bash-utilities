@@ -28,7 +28,7 @@ done
 ### Check arguments
 if [ "$help" != false ]
 then
-    utils_help -n image_resize_android -a imgresand -d 'Resize image for Android to ldpi, mdpi, hdpi, xhdpi, xxhdpi and xxxhdpi' -o '-f Your file image to resize (.png or .jpg)' -o '-d Your directory for output files. Default image name without extension' -o '-s (?) Current image size (ldpi, mdpi, hdpi, xhdpi, xxhdpi or xxxhdpi). Default "xxxhdpi"' -o '-c (?) Compress images. Default false'
+    utils_help -n image_resize_android -a imgresand -d 'Resize image for Android to ldpi, mdpi, hdpi, xhdpi, xxhdpi and xxxhdpi' -o '-f Your file image to resize (.png or .jpg)' -o '-d (?) Your directory for output files. Default image name without extension' -o '-s (?) Current image size (ldpi, mdpi, hdpi, xhdpi, xxhdpi or xxxhdpi). Default "xxxhdpi"' -o '-c (?) Compress images. Default false'
     exit 0
 fi
 
