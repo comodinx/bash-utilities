@@ -6,6 +6,7 @@
 alias android_dimens_generator='adimgen'
 alias android_copy_resources='acopyres'
 alias android_vector_2_png='avec2png'
+alias android_gradlelize='agradlelize'
 
 
 # Functions
@@ -21,4 +22,8 @@ android_copy_resources() {
 
 android_vector_2_png() {
     bash ~/bash/scripts/android/vector2Png.bash "$@"
+}
+
+android_gradlelize() {
+    bash ~/bash/scripts/android/gradlelize.bash "$@"
 }

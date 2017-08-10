@@ -35,6 +35,11 @@ then
     exit 1
 fi
 
+if [ -n "$submessage" ]
+then
+    submessage="$submessage "
+fi
+
 
 ### Source function
 read -e -p "$(tput bold)$message$(tput sgr0) $submessage" -n "$limit" input

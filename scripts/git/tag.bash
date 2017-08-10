@@ -26,7 +26,7 @@ done
 ### Check arguments
 if [ "$help" != false ]
 then
-    utils_help -n git_tag -a gtag -d 'Tagging code version' -o '-t Tag version' -o '-r (?) Delete the tag. Default false' -o '-c (?) Comment for the tag. Default the tag specified'
+    utils_help -n git_tag -a gtag -d 'Tagging code version' -o '-t Tag version' -o '-d (?) Delete the tag. Default false' -o '-c (?) Comment for the tag. Default the tag specified'
     exit 0
 fi
 

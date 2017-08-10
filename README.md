@@ -23,12 +23,15 @@ Index
         + [rebase development][api_git_rebase_development].
         + [merge][api_git_merge].
         + [push][api_git_push].
+        + [version][api_git_version].
         + [tag][api_git_tag].
     + [NPM][api_npm].
         + [update][api_npm_update].
     	+ [check][api_npm_check].
     + [Images (TODO documentation)][api_images].
     + [Helpers (TODO documentation)][api_helpers].
+        + [logs][api_helpers_logs].
+        + [user interaction][api_helpers_user_interaction].
 * [License][license].
 
 
@@ -264,6 +267,42 @@ git checkout master
 git_push -c "Update README.md" -f
 ```
 
+#### git_version
+
+Calculate tagging code version in format Major.minor.patch
+
+> Note. This command use `git describe --abbrev=0 --tags`, but to use `git tag --list` use `-f` argument
+
+*Alias: gver*
+
+```shell
+# Calculate next tagging version. Note: increased is smart. Automatically calculates levels "minor" and/or "patch" when level is "major" or "minor"
+git_version
+
+# Calculate next tagging version, but find current max tag version in list (git tag --list)
+git_version -f
+
+# Calculate previous tagging version. Note: decreased is not smart.
+git_version -d
+
+# Get current tagging version
+git_version -c
+# OR 
+git_version -c -f
+
+# Calculate next tagging version, but increment level major
+git_version -c -l major
+# OR
+git_version -c -l M
+
+# Calculate next tagging version, but increment level minor
+git_version -c -l minor
+# OR
+git_version -c -l m
+
+```
+
+
 #### git_tag
 
 Tagging code version
@@ -315,6 +354,58 @@ npmc -m unexistsmodule -d
 # Unavailable
 ```
 
+### Helpers
+
+#### Logs
+
+Logger has several utility methods
+
+##### logcolors
+
+```shell
+# Print log color help with full information
+logcolors
+# OR Alias
+lcolors
+```
+
+##### log[level]
+
+```shell
+# Print log in specific level: "trace", "debug", "info", "warn", "error", "success" and "note"
+# Usage log[level] or l[level]
+# Example:
+logsuccess
+# OR Alias
+lsuccess
+```
+
+#### User interaction
+
+User interaction has several utility methods
+
+##### read_confirm
+
+```shell
+# Asks the user for confirmation in format "y" or "n"
+read_confirm -m "Did you mean?"
+# OR Alias
+readc -m "Did you mean?"
+```
+
+##### read_input
+
+```shell
+# Asks the user to enter the requested information
+read_input -m "Enter your name:"
+# OR Alias
+readi -m "Enter your name:"
+# With limit of characters
+readi -m "Enter your name:" -l 50
+# With sub message
+readi -m "Enter your name:" -s "(Required)"
+```
+
 License
 -------
 Base Utilities is available under the MIT license. See the LICENSE file for more info.
@@ -339,10 +430,13 @@ Base Utilities is available under the MIT license. See the LICENSE file for more
 [api_git_rebase_development]: #git_development
 [api_git_merge]: #git_merge
 [api_git_push]: #git_push
+[api_git_version]: #git_version
 [api_git_tag]: #git_tag
 [api_npm]: #npm
 [api_npm_update]: #npm_update
 [api_npm_check]: #npm_check
 [api_images]: #images
 [api_helpers]: #helpers
+[api_helpers_logs]: #logs
+[api_helpers_user_interaction]: #user-interaction
 [license]: #license

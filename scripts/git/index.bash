@@ -19,6 +19,7 @@ alias gmer='git_merge'
 alias gtag='git_tag'
 alias ginit='git_init'
 alias gcheck='git_check'
+alias gver='git_version'
 alias gbrexists='git_br_exists'
 
 alias gsta='greb -b staging'
@@ -71,6 +72,10 @@ git_check() {
     bash ~/bash/scripts/git/check.bash "$@"
 
     return $?
+}
+
+git_version() {
+    bash ~/bash/scripts/git/version.bash "$@"
 }
 
 git_br_exists() {
