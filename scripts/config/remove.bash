@@ -31,7 +31,7 @@ then
     exit 1
 fi
 
-if ! [ -f "~/bash/config/default.properties" ]
+if ! [ -e ~/bash/config/default.properties ]
 then
     exit 0
 fi

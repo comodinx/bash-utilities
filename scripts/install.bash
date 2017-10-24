@@ -42,7 +42,7 @@ fi
 ### Source function
 line="source ~/bash/scripts/profile.bash"
 
-if ! [ -f "~/.bash_profile" ]
+if ! [ -e ~/.bash_profile ]
 then
     echo "" >> ~/.bash_profile
 fi

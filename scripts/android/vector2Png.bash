@@ -37,7 +37,7 @@ then
     exit 1
 fi
 
-if ! [ -f "$filename" ]
+if ! [ -e $filename ]
 then
     logwarn "Please enter a valid file"
     exit 1
@@ -61,7 +61,7 @@ xml2Svg()
     java -cp . Vector2Svg "$currentPath/$filename"
     cd $currentPath
 
-    if ! [ -f "${outputfile}.svg" ]
+    if ! [ -e "${outputfile}.svg" ]
     then
         logwarn "Parse XML vector file to SVG not found."
         exit 1
@@ -73,7 +73,7 @@ svg2Png()
 {
     file_transform -f "${outputfile}.svg" -o "png"
 
-    if ! [ -f "${outputfile}.png" ]
+    if ! [ -e $outputfile.png ]
     then
         logwarn "Parse SVG vector file to PNG not found."
         exit 1
