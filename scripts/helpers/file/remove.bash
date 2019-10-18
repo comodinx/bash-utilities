@@ -36,4 +36,4 @@ fi
 
 ### Source function
 logdebug "Delete all file match with [c:blueb]$pattern[c:green] in [c:blueb]$path[c:green]"
-find "$path" -name "$pattern" -type f -delete   
+find "$path" -name "$pattern" -type f -delete

@@ -17,7 +17,10 @@ edit_bash_profile() {
 }
 
 restore_bash_profile() {
-    javac ~/bash/scripts/android/dimens.java
-    javac ~/bash/scripts/android/vector2Svg.java
+    if command_check -c "javac"
+    then
+        javac ~/bash/scripts/android/dimens.java
+        javac ~/bash/scripts/android/vector2Svg.java
+    fi
     source ~/.bash_profile
 }

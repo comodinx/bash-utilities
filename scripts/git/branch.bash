@@ -27,4 +27,4 @@ fi
 
 
 ### Source function
-echo $(type __git_ps1 &>/dev/null && __git_ps1 | sed -e "s/^.*(//" -e "s/)$//")
+echo $(git rev-parse --abbrev-ref HEAD)

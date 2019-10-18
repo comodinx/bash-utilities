@@ -38,6 +38,8 @@ then
     exit 1
 fi
 
+logdebug "filename ${filename}";
+
 if [ ! -f "$filename" ]
 then
     logwarn 'File not found!'

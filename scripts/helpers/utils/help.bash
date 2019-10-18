@@ -4,16 +4,6 @@
 source ~/bash/scripts/helpers/index.bash
 
 
-### Helper function
-replaceSeparator() {
-    local string=$1
-
-    string="$(echo "$string" | sed 's/\[SEPARATOR\]$//g')"
-    string="${string//\[SEPARATOR\]/\n}"
-    echo $string
-}
-
-
 ### Local variables
 name=''
 usage=''
@@ -30,8 +20,8 @@ while getopts ":n:u:d:N:a:o:" opt; do
         u)  usage=$OPTARG;;
         d)  description=$OPTARG;;
         N)  note=$OPTARG;;
-        a)  alias+="\t$OPTARG[SEPARATOR]";;
-        o)  options+="\t$OPTARG[SEPARATOR]";;
+        a)  alias+="\t$OPTARG\n";;
+        o)  options+="\t$OPTARG\n";;
     esac
 done
 
@@ -48,14 +38,14 @@ logtrace '\n[c:whiteu]Options[c:0]:'
 
 if ! [ -z "$options" ]
 then
-    logtrace "$(replaceSeparator "$options")"
+    logtrace "$options"
 fi
 logtrace "\t-h (?) Display help"
 
 if ! [ -z "$alias" ]
 then
     logtrace '\n[c:whiteu]Alias[c:0]:'
-    logtrace "$(replaceSeparator "$alias")"
+    logtrace "$alias"
 fi
 
 logtrace ""
